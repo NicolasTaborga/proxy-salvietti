@@ -1,15 +1,15 @@
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 import requests
 
-def facpresupuesto_endpoint(app):
-    HEADERS = {"Accept": "application/json", "X-Empresa-Codigo": "1"}
+facpresupuesto_endpoint = Blueprint("facpresupuesto", __name__)
 
-    @app.route("/facpresupuesto")
-    def facpresupuesto():
-        fi = request.args.get("FechaInicio")
-        ff = request.args.get("FechaFin")
+HEADERS = {"Accept": "application/json", "X-Empresa-Codigo": "1"}
 
-        url = f"http://34.217.254.222/ReportServerProduccion/api/FacSalvietti/getFacPresupuesto?FechaInicio={fi}&FechaFin={ff}"
-
-        r = requests.post(url, auth=("alex", "123"), headers=HEADERS)
-        return jsonify(r.json())
+@facpresupuesto_endpoint.route("/facpresupuesto")
+def facpresupuesto():
+    fi = request.args.get("FechaInicio")
+    ff = request.args.get("FechaFin")
+    url = f"http://34.217.254.222/ReportServerProduccion/api/FacSalvietti/getFacPresupuesto?FechaInicio={fi}&FechaFin={ff}"
+    r = requests.post(url, auth=("alex", "123"), headers=HEADERS)
+    return jsonify(r.json())
+ 
