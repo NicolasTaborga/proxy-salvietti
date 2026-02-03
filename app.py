@@ -1,9 +1,9 @@
 from flask import Flask
-from endpoints.facventa import facventa_endpoint
-from endpoints.facasistencia import facasistencia_endpoint
-from endpoints.facvisita import facvisita_endpoint
-from endpoints.facruta import facruta_endpoint
-from endpoints.facpresupuesto import facpresupuesto_endpoint
+from endpoints.factventa import facventa_endpoint
+from endpoints.factasistencia import facasistencia_endpoint
+from endpoints.factvisita import facvisita_endpoint
+from endpoints.factruta import facruta_endpoint
+from endpoints.factpresupuesto import facpresupuesto_endpoint
 
 app = Flask(__name__)
 
