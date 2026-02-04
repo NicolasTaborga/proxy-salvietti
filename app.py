@@ -1,5 +1,5 @@
 from flask import Flask
-from endpoints.factventa import facventa_endpoint
+from endpoints.facventa import facventa_endpoint
 from endpoints.factasistencia import facasistencia_endpoint
 from endpoints.factvisita import facvisita_endpoint
 from endpoints.factruta import facruta_endpoint
